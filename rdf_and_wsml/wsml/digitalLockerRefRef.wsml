@@ -1,0 +1,302 @@
+wsmlVariant _"http://www.wsmo.org/wsml/wsml-syntax/wsml-rule"
+namespace { _"http://ufs.br/ontologies/mpl2kdl#"}
+
+ontology digitalLockerRefRef
+   importsOntology{_"http://ufs.br/ontologies/mpl2kdl#PythonAbstractSyntax"}  
+
+   instance Module0x7f215761fe20 memberOf Module
+      _body hasValue {ImportFrom0x7f215761fdf0, ImportFrom0x7f215761fd90, ImportFrom0x7f215761fd30, FunctionDef0x7f215761faf0}
+   instance ImportFrom0x7f215761fdf0 memberOf ImportFrom
+      _module hasValue "esp"
+      _names hasValue {alias0x7f215761fdc0}
+   instance alias0x7f215761fdc0 memberOf alias
+      _name hasValue "osdebug"
+      _asname hasValue "vendor_os_debugging_messages"
+   instance ImportFrom0x7f215761fd90 memberOf ImportFrom
+      _module hasValue "gc"
+      _names hasValue {alias0x7f215761fd60}
+   instance alias0x7f215761fd60 memberOf alias
+      _name hasValue "collect"
+      _asname hasValue "garbage_colector"
+   instance ImportFrom0x7f215761fd30 memberOf ImportFrom
+      _module hasValue "digitalLockerRefRef.digitalLocker_librayRef"
+      _names hasValue {alias0x7f215761fd00, alias0x7f215761fcd0, alias0x7f215761fca0, alias0x7f215761fc70, alias0x7f215761fc40, alias0x7f215761fc10, alias0x7f215761fbe0, alias0x7f215761fbb0, alias0x7f215761fb80, alias0x7f215761fb50, alias0x7f215761fb20}
+   instance alias0x7f215761fd00 memberOf alias
+      _name hasValue "wifi_station_connector_with_ssid_and_password"
+   instance alias0x7f215761fcd0 memberOf alias
+      _name hasValue "socket_connector_with_port_max_listenable_and_host"
+   instance alias0x7f215761fca0 memberOf alias
+      _name hasValue "socket_accepted_connection"
+   instance alias0x7f215761fc70 memberOf alias
+      _name hasValue "socket_request_receiver"
+   instance alias0x7f215761fc40 memberOf alias
+      _name hasValue "web_page_loader"
+   instance alias0x7f215761fc10 memberOf alias
+      _name hasValue "socket_response_sender_by_conn"
+   instance alias0x7f215761fbe0 memberOf alias
+      _name hasValue "init_locker"
+   instance alias0x7f215761fbb0 memberOf alias
+      _name hasValue "open_locker_request"
+   instance alias0x7f215761fb80 memberOf alias
+      _name hasValue "close_locker_request"
+   instance alias0x7f215761fb50 memberOf alias
+      _name hasValue "open_locker"
+   instance alias0x7f215761fb20 memberOf alias
+      _name hasValue "close_locker"
+   instance FunctionDef0x7f215761faf0 memberOf FunctionDef
+      _name hasValue "startServer"
+      _args hasValue arguments0x7f215761fac0
+      _body hasValue {Expr0x7f215761fa60, Expr0x7f215761f9a0, Expr0x7f215761f910, Assign0x7f215761f820, Assign0x7f215761f700, While0x7f215761f5e0}
+   instance arguments0x7f215761fac0 memberOf arguments
+   instance Expr0x7f215761fa60 memberOf Expr
+      _value hasValue Call0x7f215761fa30
+   instance Call0x7f215761fa30 memberOf Call
+      _func hasValue Name0x7f215761fa00
+      _args hasValue {Constant0x7f215761f9d0}
+   instance Name0x7f215761fa00 memberOf Name
+      _id hasValue "vendor_os_debugging_messages"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Constant0x7f215761f9d0 memberOf Constant
+   instance Expr0x7f215761f9a0 memberOf Expr
+      _value hasValue Call0x7f215761f970
+   instance Call0x7f215761f970 memberOf Call
+      _func hasValue Name0x7f215761f940
+   instance Name0x7f215761f940 memberOf Name
+      _id hasValue "garbage_colector"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Expr0x7f215761f910 memberOf Expr
+      _value hasValue Call0x7f215761f8e0
+   instance Call0x7f215761f8e0 memberOf Call
+      _func hasValue Name0x7f215761f8b0
+      _args hasValue {Constant0x7f215761f880, Constant0x7f215761f850}
+   instance Name0x7f215761f8b0 memberOf Name
+      _id hasValue "wifi_station_connector_with_ssid_and_password"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Constant0x7f215761f880 memberOf Constant
+      _value hasValue "NameOfNetworkTP"
+   instance Constant0x7f215761f850 memberOf Constant
+      _value hasValue "0123456789"
+   instance Assign0x7f215761f820 memberOf Assign
+      _targets hasValue {Tuple0x7f215761f7f0}
+      _value hasValue Call0x7f215761f760
+   instance Tuple0x7f215761f7f0 memberOf Tuple
+      _elts hasValue {Name0x7f215761f7c0, Name0x7f215761f790}
+      _ctx hasValue Store0x7f215761c880
+   instance Name0x7f215761f7c0 memberOf Name
+      _id hasValue "locker_state"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Name0x7f215761f790 memberOf Name
+      _id hasValue "motor"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f760 memberOf Call
+      _func hasValue Name0x7f215761f730
+   instance Name0x7f215761f730 memberOf Name
+      _id hasValue "init_locker"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Assign0x7f215761f700 memberOf Assign
+      _targets hasValue {Name0x7f215761f6d0}
+      _value hasValue Call0x7f215761f6a0
+   instance Name0x7f215761f6d0 memberOf Name
+      _id hasValue "socket"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f6a0 memberOf Call
+      _func hasValue Name0x7f215761f670
+      _args hasValue {Constant0x7f215761f640, Constant0x7f215761f610}
+   instance Name0x7f215761f670 memberOf Name
+      _id hasValue "socket_connector_with_port_max_listenable_and_host"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Constant0x7f215761f640 memberOf Constant
+      _value hasValue "3000"
+   instance Constant0x7f215761f610 memberOf Constant
+      _value hasValue "2"
+   instance While0x7f215761f5e0 memberOf While
+      _test hasValue Constant0x7f215761f5b0
+      _body hasValue {Assign0x7f215761f580, Assign0x7f215761f490, Assign0x7f215761f370, Assign0x7f215761f280, If0x7f215761f070, If0x7f215761eec0, Assign0x7f215761ed10, Expr0x7f215761ebc0}
+   instance Constant0x7f215761f5b0 memberOf Constant
+      _value hasValue "True"
+   instance Assign0x7f215761f580 memberOf Assign
+      _targets hasValue {Name0x7f215761f550}
+      _value hasValue Call0x7f215761f520
+   instance Name0x7f215761f550 memberOf Name
+      _id hasValue "connection"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f520 memberOf Call
+      _func hasValue Name0x7f215761f4f0
+      _args hasValue {Name0x7f215761f4c0}
+   instance Name0x7f215761f4f0 memberOf Name
+      _id hasValue "socket_accepted_connection"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761f4c0 memberOf Name
+      _id hasValue "socket"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Assign0x7f215761f490 memberOf Assign
+      _targets hasValue {Name0x7f215761f460}
+      _value hasValue Call0x7f215761f430
+   instance Name0x7f215761f460 memberOf Name
+      _id hasValue "request"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f430 memberOf Call
+      _func hasValue Name0x7f215761f400
+      _args hasValue {Name0x7f215761f3d0, Constant0x7f215761f3a0}
+   instance Name0x7f215761f400 memberOf Name
+      _id hasValue "socket_request_receiver"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761f3d0 memberOf Name
+      _id hasValue "connection"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Constant0x7f215761f3a0 memberOf Constant
+      _value hasValue "1024"
+   instance Assign0x7f215761f370 memberOf Assign
+      _targets hasValue {Name0x7f215761f340}
+      _value hasValue Call0x7f215761f310
+   instance Name0x7f215761f340 memberOf Name
+      _id hasValue "locker_on"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f310 memberOf Call
+      _func hasValue Name0x7f215761f2e0
+      _args hasValue {Name0x7f215761f2b0}
+   instance Name0x7f215761f2e0 memberOf Name
+      _id hasValue "open_locker_request"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761f2b0 memberOf Name
+      _id hasValue "request"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Assign0x7f215761f280 memberOf Assign
+      _targets hasValue {Name0x7f215761f250}
+      _value hasValue Call0x7f215761f100
+   instance Name0x7f215761f250 memberOf Name
+      _id hasValue "locker_off"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761f100 memberOf Call
+      _func hasValue Name0x7f215761f0d0
+      _args hasValue {Name0x7f215761f0a0}
+   instance Name0x7f215761f0d0 memberOf Name
+      _id hasValue "close_locker_request"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761f0a0 memberOf Name
+      _id hasValue "request"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance If0x7f215761f070 memberOf If
+      _test hasValue Compare0x7f215761f040
+      _body hasValue {Assign0x7f215761efb0}
+   instance Compare0x7f215761f040 memberOf Compare
+      _left hasValue Name0x7f215761f010
+      _ops hasValue {Eq0x7f215761d150}
+      _comparators hasValue {Constant0x7f215761efe0}
+   instance Name0x7f215761f010 memberOf Name
+      _id hasValue "locker_on"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Eq0x7f215761d150 memberOf Eq
+   instance Constant0x7f215761efe0 memberOf Constant
+      _value hasValue "6"
+   instance Assign0x7f215761efb0 memberOf Assign
+      _targets hasValue {Name0x7f215761ef80}
+      _value hasValue Call0x7f215761ef50
+   instance Name0x7f215761ef80 memberOf Name
+      _id hasValue "locker_state"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761ef50 memberOf Call
+      _func hasValue Name0x7f215761ef20
+      _args hasValue {Name0x7f215761eef0}
+   instance Name0x7f215761ef20 memberOf Name
+      _id hasValue "open_locker"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761eef0 memberOf Name
+      _id hasValue "motor"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance If0x7f215761eec0 memberOf If
+      _test hasValue Compare0x7f215761ee90
+      _body hasValue {Assign0x7f215761ee00}
+   instance Compare0x7f215761ee90 memberOf Compare
+      _left hasValue Name0x7f215761ee60
+      _ops hasValue {Eq0x7f215761d150}
+      _comparators hasValue {Constant0x7f215761ee30}
+   instance Name0x7f215761ee60 memberOf Name
+      _id hasValue "locker_off"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Eq0x7f215761d150 memberOf Eq
+   instance Constant0x7f215761ee30 memberOf Constant
+      _value hasValue "6"
+   instance Assign0x7f215761ee00 memberOf Assign
+      _targets hasValue {Name0x7f215761edd0}
+      _value hasValue Call0x7f215761eda0
+   instance Name0x7f215761edd0 memberOf Name
+      _id hasValue "locker_state"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761eda0 memberOf Call
+      _func hasValue Name0x7f215761ed70
+      _args hasValue {Name0x7f215761ed40}
+   instance Name0x7f215761ed70 memberOf Name
+      _id hasValue "close_locker"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761ed40 memberOf Name
+      _id hasValue "motor"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Assign0x7f215761ed10 memberOf Assign
+      _targets hasValue {Name0x7f215761ece0}
+      _value hasValue Call0x7f215761ecb0
+   instance Name0x7f215761ece0 memberOf Name
+      _id hasValue "response"
+      _ctx hasValue Store0x7f215761c880
+   instance Store0x7f215761c880 memberOf Store
+   instance Call0x7f215761ecb0 memberOf Call
+      _func hasValue Name0x7f215761ec80
+      _args hasValue {Constant0x7f215761ec50, Constant0x7f215761ec20, Name0x7f215761ebf0}
+   instance Name0x7f215761ec80 memberOf Name
+      _id hasValue "web_page_loader"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Constant0x7f215761ec50 memberOf Constant
+      _value hasValue "page.html"
+   instance Constant0x7f215761ec20 memberOf Constant
+      _value hasValue "\"\"\" + locker_state + \"\"\""
+   instance Name0x7f215761ebf0 memberOf Name
+      _id hasValue "locker_state"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Expr0x7f215761ebc0 memberOf Expr
+      _value hasValue Call0x7f215761eb90
+   instance Call0x7f215761eb90 memberOf Call
+      _func hasValue Name0x7f215761eb60
+      _args hasValue {Name0x7f215761eb30, Name0x7f215761ea70}
+   instance Name0x7f215761eb60 memberOf Name
+      _id hasValue "socket_response_sender_by_conn"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761eb30 memberOf Name
+      _id hasValue "connection"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
+   instance Name0x7f215761ea70 memberOf Name
+      _id hasValue "response"
+      _ctx hasValue Load0x7f215761c820
+   instance Load0x7f215761c820 memberOf Load
