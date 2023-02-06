@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns="http://ufs.br/ontologies#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#PythonAbstractSyntax">
+	<ontologyID xmlns="http://www.wsmo.org/wsml/wsml-syntax#" rdf:resource="http://ufs.br/ontologies#PythonAbstractSyntax"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#mod">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Module">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#mod"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Module"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_ignores">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Module"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#type_ignore"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Interactive">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#mod"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Interactive"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Expression">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#mod"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Expression"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#FunctionType">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#mod"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_argtypes">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionType"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_returns">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionType"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Suite">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#mod"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Suite"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#stmt">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#FunctionDef">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_name">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_args">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arguments"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_decorator_list">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_returns">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FunctionDef"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AsyncFunctionDef">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_name">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_args">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arguments"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_decorator_list">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_returns">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFunctionDef"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#ClassDef">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_name">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ClassDef"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_bases">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ClassDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_keywords">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ClassDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#keyword"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ClassDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_decorator_list">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ClassDef"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Return">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Return"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Delete">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_targets">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Delete"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Assign">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_targets">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Assign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Assign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Assign"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AugAssign">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AugAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_op">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AugAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AugAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AnnAssign">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AnnAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_annotation">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AnnAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AnnAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_simple">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AnnAssign"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#_int"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#For">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#For"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_iter">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#For"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#For"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#For"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#For"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AsyncFor">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFor"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_iter">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFor"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFor"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFor"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncFor"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#While">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_test">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#While"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#While"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#While"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#If">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_test">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#If"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#If"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#If"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#With">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_items">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#With"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#withitem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#With"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#With"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AsyncWith">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_items">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncWith"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#withitem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncWith"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#AsyncWith"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Raise">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_exc">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Raise"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_cause">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Raise"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Try">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Try"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_handlers">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Try"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#excepthandler"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Try"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_finalbody">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Try"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Assert">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_test">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Assert"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_msg">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Assert"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Import">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_names">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Import"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#alias"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#ImportFrom">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_module">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ImportFrom"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_names">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ImportFrom"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#alias"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_level">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ImportFrom"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#_int"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Global">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_names">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Global"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Nonlocal">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_names">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Nonlocal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Expr">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Expr"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Pass">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Break">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Continue">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#expr">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#BoolOp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_op">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#BoolOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#boolop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_values">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#BoolOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#NamedExpr">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#NamedExpr"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#NamedExpr"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#BinOp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_left">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#BinOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_op">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#BinOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_right">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#BinOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#UnaryOp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_op">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#UnaryOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#unaryop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_operand">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#UnaryOp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Lambda">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_args">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Lambda"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arguments"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Lambda"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#IfExp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_test">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#IfExp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#IfExp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_orelse">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#IfExp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Dict">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_keys">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Dict"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_values">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Dict"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Set">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elts">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Set"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#ListComp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elt">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ListComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_generators">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ListComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#comprehension"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#SetComp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elt">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#SetComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_generators">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#SetComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#comprehension"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#DictComp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_key">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#DictComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#DictComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_generators">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#DictComp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#comprehension"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#GeneratorExp">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elt">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#GeneratorExp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_generators">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#GeneratorExp"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#comprehension"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Await">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Await"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Yield">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Yield"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#YieldFrom">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#YieldFrom"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Compare">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_left">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Compare"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ops">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Compare"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_comparators">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Compare"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Call">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_func">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Call"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_args">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Call"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_keywords">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Call"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#keyword"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#FormattedValue">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FormattedValue"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_conversion">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FormattedValue"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#_int"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_format_spec">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#FormattedValue"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#JoinedStr">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_values">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#JoinedStr"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Constant">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Constant"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_kind">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Constant"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Attribute">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Attribute"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_attr">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Attribute"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Attribute"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Subscript">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Subscript"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_slice">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Subscript"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Subscript"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Starred">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Starred"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Starred"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Name">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_id">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Name"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Name"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#List">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elts">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#List"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#List"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Tuple">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_elts">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Tuple"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ctx">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Tuple"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#expr_context">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Load">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Store">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Del">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AugLoad">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#AugStore">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Param">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#expr_context"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#slice">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Slice">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_lower">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Slice"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_upper">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Slice"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_step">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Slice"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#ExtSlice">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_dims">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ExtSlice"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Index">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#slice"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#Index"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#boolop">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#And">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#boolop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Or">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#boolop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#operator">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Add">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Sub">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Mult">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#MatMult">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Div">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Mod">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Pow">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#LShift">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#RShift">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#BitOr">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#BitXor">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#BitAnd">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#FloorDiv">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#operator"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#unaryop">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Invert">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#unaryop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Not">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#unaryop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#UAdd">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#unaryop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#USub">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#unaryop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#cmpop">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Eq">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#NotEq">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Lt">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#LtE">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Gt">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#GtE">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#Is">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#IsNot">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#In">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#NotIn">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#cmpop"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#comprehension">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_target">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#comprehension"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_iter">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#comprehension"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_ifs">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#comprehension"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_is_async">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#comprehension"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#_int"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#excepthandler">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#ExceptHandler">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#excepthandler"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ExceptHandler"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_name">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ExceptHandler"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_body">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#ExceptHandler"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#stmt"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#arguments">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_posonlyargs">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_args">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_vararg">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_kwonlyargs">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_kw_defaults">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_kwarg">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#arg"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_defaults">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arguments"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#arg">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_arg">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arg"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_annotation">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arg"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_type_comment">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#arg"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#keyword">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_arg">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#keyword"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_value">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#keyword"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#alias">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_name">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#alias"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_asname">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#alias"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#withitem">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_context_expr">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#withitem"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_optional_vars">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#withitem"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#expr"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#type_ignore">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#TypeIgnore">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	<rdfs:subClassOf rdf:resource="http://ufs.br/ontologies#type_ignore"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_lineno">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#TypeIgnore"/>
+	<rdfs:range rdf:resource="http://ufs.br/ontologies#_int"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ufs.br/ontologies#_tag">
+	<rdfs:comment>constraining attribute</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	<rdfs:domain rdf:resource="http://ufs.br/ontologies#TypeIgnore"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+</rdf:RDF>
