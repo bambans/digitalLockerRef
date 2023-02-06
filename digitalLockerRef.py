@@ -1,38 +1,34 @@
-from machine import Pin, PWM
-import esp, gc
+from esp import osdebug as vendor_os_debugging_messages
+from gc import collect as garbage_colector
+# import esp, gc
 
-from digitalLocker_libray import wifi_connector, socket_connector, socket_accept, socket_request, web_page, socket_response
+from digitalLockerRefRef.digitalLocker_librayRef import wifi_station_connector_with_ssid_and_password, socket_connector_with_port_max_listenable_and_host, socket_accepted_connection, socket_request_receiver, web_page_loader, socket_response_sender_by_conn, init_locker, open_locker_request, close_locker_request, open_locker, close_locker
 
 def startServer():
-    esp.osdebug(None)
-    gc.collect()
+    vendor_os_debugging_messages(None)
+    garbage_colector()
 
-    wifi_connector('NameOfNetworkTP', '0123456789')
+    wifi_station_connector_with_ssid_and_password('NameOfNetworkTP', '0123456789')
 
-    p25 = Pin(25, Pin.OUT)
-    motor = PWM(p25, freq=50)
-    motor.duty(40)
-    locker_state = "OFF"
+    locker_state, motor = init_locker()
 
-    s = socket_connector(3000, 2)
+    socket = socket_connector_with_port_max_listenable_and_host(3000, 2)
 
     while True:
-        conn = socket_accept(s)
+        connection = socket_accepted_connection(socket)
 
-        request = socket_request(conn, 1024)
-
-        locker_on = request.find('/?locker=on')
-        locker_off = request.find('/?locker=off')
+        request = socket_request_receiver(connection, 1024)
+        
+        locker_on = open_locker_request(request)
+        
+        locker_off = close_locker_request(request)
 
         if locker_on == 6:
-            print('LOCKER ON')
-            motor.duty(110)
-            locker_state = "ON"
+            locker_state = open_locker(motor)
+
         if locker_off == 6:
-            print('LOCKER OFF')
-            motor.duty(40)
-            locker_state = "OFF"
+            locker_state = close_locker(motor)
 
-        response = web_page('page.html','""" + locker_state + """', locker_state)
+        response = web_page_loader('page.html','""" + locker_state + """', locker_state)
 
-        socket_response(conn, response)
+        socket_response_sender_by_conn(connection, response)
