@@ -1,6 +1,7 @@
 from rdflib import Graph
 from rdflib.query import Result
 from ast import AST
+import ast
 
 pythonAST = Graph()
 pythonAST.parse(location = 'rdfs/PythonAbstractSyntax.rdfs', format = 'xml')
@@ -69,6 +70,152 @@ def query(type = "SELECT", subject = "?s", predicate = "?p", object = "?o") -> s
     else:
         return None
 
+def tokenTranslate(astClassNode:AST, alt:bool = False) -> str:
+    """
+    This method receives an AST node and returns its python token version for that tokenizable nodes. It supports the following arguments:
+    - `astClassNode:AST`: an AST node;
+    - `alt:bool`: a boolean variable which makes possible to change what token string will be returned.
+    """
+    astToTokenList = {
+        ast.AST: '',
+        ast.mod: '',
+        ast.Module: '',
+        ast.Interactive: '',
+        ast.Expression: '',
+        ast.FunctionType: '',
+        ast.Suite: '',
+        ast.stmt: '',
+        ast.FunctionDef: 'def {}',
+        ast.AsyncFunctionDef: 'async def',
+        ast.ClassDef: 'class',
+        ast.Return: 'return',
+        ast.Delete: '',
+        ast.Assign: '',
+        ast.AugAssign: '',
+        ast.AnnAssign: '',
+        ast.For: 'for',
+        ast.AsyncFor: '',
+        ast.While: 'while',
+        ast.If: 'if',
+        ast.With: 'with',
+        ast.AsyncWith: '',
+        ast.Match: 'match',
+        ast.Raise: 'raise',
+        ast.Try: 'try',
+        ast.TryStar: '',
+        ast.Assert: 'assert',
+        ast.Import: 'import',
+        ast.ImportFrom: 'from {} import {}' if not alt else 'from {} import {} as {}' ,
+        ast.Global: 'global',
+        ast.Nonlocal: '',
+        ast.Expr: '',
+        ast.Pass: 'pass',
+        ast.Break: 'break',
+        ast.Continue: 'continue',
+        ast.expr: '',
+        ast.BoolOp: '',
+        ast.NamedExpr: '',
+        ast.BinOp: '',
+        ast.UnaryOp: '',
+        ast.Lambda: 'lambda',
+        ast.IfExp: '',
+        ast.Dict: 'dict',
+        ast.Set: '{}',
+        ast.ListComp: '',
+        ast.SetComp: '',
+        ast.DictComp: '',
+        ast.GeneratorExp: '',
+        ast.Await: 'await',
+        ast.Yield: 'yield',
+        ast.YieldFrom: 'yield from',
+        ast.Compare: '',
+        ast.Call: '',
+        ast.FormattedValue: '',
+        ast.JoinedStr: '',
+        ast.Constant: '',
+        ast.Num: '',
+        ast.Str: '',
+        ast.Bytes: '',
+        ast.NameConstant: '',
+        ast.Ellipsis: '',
+        ast.Attribute: '',
+        ast.Subscript: '',
+        ast.Starred: '',
+        ast.Name: '',
+        ast.List: '[{}]',
+        ast.Tuple: '({})',
+        ast.Slice: '',
+        ast.expr_context: '',
+        ast.Load: '',
+        ast.Store: '',
+        ast.Del: '',
+        ast.AugLoad: '',
+        ast.AugStore: '',
+        ast.Param: '',
+        ast.boolop: '',
+        ast.And: 'and',
+        ast.Or: 'or',
+        ast.operator: '',
+        ast.Add: '+',
+        ast.Sub: '-',
+        ast.Mult: '*',
+        ast.MatMult: '@',
+        ast.Div: '/',
+        ast.Mod: '%',
+        ast.Pow: '**',
+        ast.LShift: '',
+        ast.RShift: '',
+        ast.BitOr: '',
+        ast.BitXor: '',
+        ast.BitAnd: '',
+        ast.FloorDiv: '',
+        ast.unaryop: '',
+        ast.Invert: '',
+        ast.Not: 'not',
+        ast.UAdd: '',
+        ast.USub: '',
+        ast.cmpop: '',
+        ast.Eq: '==',
+        ast.NotEq: '!=',
+        ast.Lt: '<',
+        ast.LtE: '<=',
+        ast.Gt: '>',
+        ast.GtE: '>=',
+        ast.Is: 'is',
+        ast.IsNot: 'is not',
+        ast.In: 'in',
+        ast.NotIn: 'not in',
+        ast.comprehension: '',
+        ast.excepthandler: '',
+        ast.ExceptHandler: '',
+        ast.arguments: '',
+        ast.arg: '',
+        ast.keyword: '',
+        ast.alias: '',
+        ast.withitem: '',
+        ast.match_case: '',
+        ast.pattern: '',
+        ast.MatchValue: '',
+        ast.MatchSingleton: '',
+        ast.MatchSequence: '',
+        ast.MatchMapping: '',
+        ast.MatchClass: '',
+        ast.MatchStar: '',
+        ast.MatchAs: '',
+        ast.MatchOr: '',
+        ast.type_ignore: '',
+        ast.TypeIgnore: '',
+        ast.slice: '',
+        ast.Index: '',
+        ast.ExtSlice: ''
+    }
+    return astToTokenList[astClassNode]
+    # point = {'x':4,'y':-5}
+    # print('{xx} {y}'.format_map(point))
+
+    # point = {'x':4,'y':-5, 'z': 0}
+    # print('{x} {y} {z}'.format_map(point))
+
 def GraphRecursive(treeNode:AST|None = AST, graphNode = None, graph:Graph = pythonAST, level:int = 0):
     """
     This function walks recursively on the given RDFS graph. For each graph node, its type is tested and, from searching on `ASTlist`, it becomes possible to performe a new query for this node by each node field (described by the AST).
@@ -81,7 +228,7 @@ def GraphRecursive(treeNode:AST|None = AST, graphNode = None, graph:Graph = pyth
     """
     if treeNode is not None and graphNode is None:
         for subject in RDFQuery(graph, query(predicate = "rdf:type", object = "mpl2kdl:" + treeNode.__name__)):
-            # print(level*"    ", "<<<<<", treeNode.__name__, ">>>>>")
+            print(level*"    ", f'name: {tokenTranslate(astClassNode = treeNode) or subject.s.fragment}')
             for field in treeNode._fields:
                 for object in RDFQuery(graph, query(subject = "mpl2kdl:" + subject.s.fragment, predicate = "mpl2kdl:_" + field)):
                     # try:
@@ -92,7 +239,7 @@ def GraphRecursive(treeNode:AST|None = AST, graphNode = None, graph:Graph = pyth
     elif treeNode is None and graphNode is not None:
             try:
                 for subject in RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate="rdf:type")):
-                    # print(level*"    ", "<<<<<", ASTlist[subject.o.fragment].__name__, ">>>>>")
+                    print(level*"    ", f'name: {tokenTranslate(astClassNode = ASTlist[subject.o.fragment]) or subject.o.fragment}')
                     for field in ASTlist[subject.o.fragment]._fields:
                         for object in RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate = "mpl2kdl:_" + field)):
                             # try:
@@ -122,7 +269,6 @@ def Recursive(node:AST = AST, graph:Graph = pythonAST):
     This function only dispatch `ASTRecursive`.
     """
     ASTRecursive(node = node, graph = graph)
-
 
 if __name__ == "__main__":
     astList()
