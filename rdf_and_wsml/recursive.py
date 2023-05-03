@@ -1,6 +1,6 @@
 from rdflib import Graph
 from rdflib.query import Result
-from ast import AST, Tuple, Call, ImportFrom
+from ast import AST, Tuple, Call, ImportFrom, arguments
 from classToToken import astToTokenList
 
 pythonAST = Graph()
@@ -113,9 +113,10 @@ def GraphRecursive(graph:Graph = pythonAST, graphNode = None, block_level = 0):
                     if len(objects) > 0:
                         print(astToTokenList[getAstObject(subject.o.fragment)][field]['open'], end="")
                         for index, object in enumerate(objects):
+                            # print('\n<', getAstObject(subject.o.fragment), field, object.o, '>\n')
                             value = GraphRecursive(graph = graph, graphNode = object.o, block_level = level)
-                            # print('\n<', subject.o.fragment, field, object.o, '>\n')
-                            print("\n!-{debug: ", value.__class__, value, '}-!')
+                            
+                            # print("\n!-{debug: ", value.__class__, value, '}-!')
 
                             # observar o 'body' como marcador de bloco
                             if field == 'body':
@@ -126,17 +127,18 @@ def GraphRecursive(graph:Graph = pythonAST, graphNode = None, block_level = 0):
                             print(value if value is not None else '', end="")
                             
                             # se houver mais de uma iteração, colocar as vírgulas
-                            if (getAstObject(subject.o.fragment) is Tuple and index != len(objects)-1) or (getAstObject(subject.o.fragment) is ImportFrom and field == 'names' and len(objects) > 1 and index != len(objects)-1) or (getAstObject(subject.o.fragment) is Call and field == 'args' and index != len(objects)-1):
+                            if (getAstObject(subject.o.fragment) is Tuple and index != len(objects)-1) or (getAstObject(subject.o.fragment) is ImportFrom and field == 'names' and len(objects) > 1 and index != len(objects)-1) or (getAstObject(subject.o.fragment) is Call and field == 'args' and index != len(objects)-1) or (getAstObject(subject.o.fragment) is arguments and field == 'args' and index != len(objects)-1):
                                 # Para as tuplas é mais fácil, mas no caso abaixo, tenho que estudar outra alternativa:
                                 # getAstObject(subject.o.fragment) is alias and field == 'name' and len(objects) > 1 and index != len(objects)-1
                                 print(', ', end='')
                         print(astToTokenList[getAstObject(subject.o.fragment)][field]['close'], end="")
                     else:
                         # resolver o caso do 'as' no ImportFrom
-                        # if field in fieldsFilter:
-                        #     print(astToTokenList[getAstObject(subject.o.fragment)][field]['open'], end="")
-                        #     print(astToTokenList[getAstObject(subject.o.fragment)][field]['close'], end="")
-                        pass
+                        if field in fieldsFilter:
+                            print(astToTokenList[getAstObject(subject.o.fragment)][field]['open'], end="")
+                            print(astToTokenList[getAstObject(subject.o.fragment)][field]['close'], end="")
+
+                    block_level = level
     except:
         # print('<-{',graphNode,'}->')
         if graphNode == 'None':
@@ -176,9 +178,9 @@ def Recursive(node:AST = AST, graph:Graph = pythonAST) -> bool:
 if __name__ == "__main__":
     astList()
 
-    # print("-------------------------- DIGITAL LOCKER REF -------------------------")
-    # Recursive(graph = digital_locker_ref)
-    # print("-----------------------------------------------------------------------")
+    print("-------------------------- DIGITAL LOCKER REF -------------------------")
+    Recursive(graph = digital_locker_ref)
+    print("-----------------------------------------------------------------------")
 
     # print()
 
