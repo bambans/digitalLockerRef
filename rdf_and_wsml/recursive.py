@@ -1,20 +1,30 @@
 from rdflib import Graph
 from rdflib.query import Result
-from ast import AST
-import ast
+from ast import AST, Tuple, Call, ImportFrom
+from classToToken import astToTokenList
 
 pythonAST = Graph()
-pythonAST.parse(location = 'rdfs/PythonAbstractSyntax.rdfs', format = 'xml')
+# pythonAST.parse(location = 'rdfs/PythonAbstractSyntax.rdf', format = 'xml')
 
-# digital_locker_lib = Graph()
-# digital_locker_lib.parse(location = 'rdfs/digitalLocker_librayRef.rdfs', format = 'xml')
+digital_locker_lib = Graph()
+digital_locker_lib.parse(location = 'rdfs/digitalLocker_libray.rdf', format = 'xml')
 
 digital_locker_ref = Graph()
-digital_locker_ref.parse(location = 'rdfs/digitalLockerRefRef.rdfs', format = 'xml')
+digital_locker_ref.parse(location = 'rdfs/digitalLockerRef.rdf', format = 'xml')
 
 ASTlist = {}
 """
 It is the default dictionary used in `astList` method. 
+"""
+
+codeString = ''
+"""
+This is the variable in which will be stored the code itself.
+"""
+
+fieldsFilter = {'kind', 'ctx'}
+"""
+A bunch of fields that should not be computed.
 """
 
 def astList(node:AST = AST, list:dict = ASTlist):
@@ -29,6 +39,12 @@ def astList(node:AST = AST, list:dict = ASTlist):
     subclasses = node.__subclasses__()
     for subclass in subclasses:
         astList(node = subclass)
+
+def getAstObject(nodeName:str, ASTlist:dict = ASTlist) -> AST:
+    if nodeName == 'NoneStmt':
+        return ''
+    else:
+        return ASTlist[nodeName]
 
 def RDFQuery(graph:Graph, query:str) -> Result:
     """
@@ -50,228 +66,122 @@ def RDFQuery(graph:Graph, query:str) -> Result:
 def query(type = "SELECT", subject = "?s", predicate = "?p", object = "?o") -> str:
     """
     This function receives these following arguments (type and RDF semantic triple - subject, predicate and object) and it returns a SPARQL query string:
-    - `type`: SELECT (default) or ASK;
     - `subject`: "?s" (default) or a given value;
     - `predicate`: "?p" (default) or a given value;
     - `object`: "?o" (default) or a given value.
     """
-    if type == "SELECT":
-        return """
-            """+type+""" ?s ?p ?o WHERE{
-                """+subject+""" """+predicate+""" """+object+""" .
-            }
-        """
-    elif type == "ASK":
-        return """
-            """+type+"""{
-                """+subject+""" """+predicate+""" """+object+""" .
-            }
-        """
-    else:
-        return None
+    return """
+        """+type+""" ?s ?p ?o WHERE{
+            """+subject+""" """+predicate+""" """+object+""" .
+        }
+    """
 
-def tokenTranslate(astClassNode:AST, alt:bool = False) -> str:
+def tokenTranslator(astClassNode:AST, field:str = None, value:any = None):
     """
     This method receives an AST node and returns its python token version for that tokenizable nodes. It supports the following arguments:
     - `astClassNode:AST`: an AST node;
     - `alt:bool`: a boolean variable which makes possible to change what token string will be returned.
     """
-    astToTokenList = {
-        ast.AST: '',
-        ast.mod: '',
-        ast.Module: '',
-        ast.Interactive: '',
-        ast.Expression: '',
-        ast.FunctionType: '',
-        ast.Suite: '',
-        ast.stmt: '',
-        ast.FunctionDef: 'def {}',
-        ast.AsyncFunctionDef: 'async def',
-        ast.ClassDef: 'class',
-        ast.Return: 'return',
-        ast.Delete: '',
-        ast.Assign: '',
-        ast.AugAssign: '',
-        ast.AnnAssign: '',
-        ast.For: 'for',
-        ast.AsyncFor: '',
-        ast.While: 'while',
-        ast.If: 'if',
-        ast.With: 'with',
-        ast.AsyncWith: '',
-        ast.Match: 'match',
-        ast.Raise: 'raise',
-        ast.Try: 'try',
-        ast.TryStar: '',
-        ast.Assert: 'assert',
-        ast.Import: 'import',
-        ast.ImportFrom: 'from {} import {}' if not alt else 'from {} import {} as {}' ,
-        ast.Global: 'global',
-        ast.Nonlocal: '',
-        ast.Expr: '',
-        ast.Pass: 'pass',
-        ast.Break: 'break',
-        ast.Continue: 'continue',
-        ast.expr: '',
-        ast.BoolOp: '',
-        ast.NamedExpr: '',
-        ast.BinOp: '',
-        ast.UnaryOp: '',
-        ast.Lambda: 'lambda',
-        ast.IfExp: '',
-        ast.Dict: 'dict',
-        ast.Set: '{}',
-        ast.ListComp: '',
-        ast.SetComp: '',
-        ast.DictComp: '',
-        ast.GeneratorExp: '',
-        ast.Await: 'await',
-        ast.Yield: 'yield',
-        ast.YieldFrom: 'yield from',
-        ast.Compare: '',
-        ast.Call: '',
-        ast.FormattedValue: '',
-        ast.JoinedStr: '',
-        ast.Constant: '',
-        ast.Num: '',
-        ast.Str: '',
-        ast.Bytes: '',
-        ast.NameConstant: '',
-        ast.Ellipsis: '',
-        ast.Attribute: '',
-        ast.Subscript: '',
-        ast.Starred: '',
-        ast.Name: '',
-        ast.List: '[{}]',
-        ast.Tuple: '({})',
-        ast.Slice: '',
-        ast.expr_context: '',
-        ast.Load: '',
-        ast.Store: '',
-        ast.Del: '',
-        ast.AugLoad: '',
-        ast.AugStore: '',
-        ast.Param: '',
-        ast.boolop: '',
-        ast.And: 'and',
-        ast.Or: 'or',
-        ast.operator: '',
-        ast.Add: '+',
-        ast.Sub: '-',
-        ast.Mult: '*',
-        ast.MatMult: '@',
-        ast.Div: '/',
-        ast.Mod: '%',
-        ast.Pow: '**',
-        ast.LShift: '',
-        ast.RShift: '',
-        ast.BitOr: '',
-        ast.BitXor: '',
-        ast.BitAnd: '',
-        ast.FloorDiv: '',
-        ast.unaryop: '',
-        ast.Invert: '',
-        ast.Not: 'not',
-        ast.UAdd: '',
-        ast.USub: '',
-        ast.cmpop: '',
-        ast.Eq: '==',
-        ast.NotEq: '!=',
-        ast.Lt: '<',
-        ast.LtE: '<=',
-        ast.Gt: '>',
-        ast.GtE: '>=',
-        ast.Is: 'is',
-        ast.IsNot: 'is not',
-        ast.In: 'in',
-        ast.NotIn: 'not in',
-        ast.comprehension: '',
-        ast.excepthandler: '',
-        ast.ExceptHandler: '',
-        ast.arguments: '',
-        ast.arg: '',
-        ast.keyword: '',
-        ast.alias: '',
-        ast.withitem: '',
-        ast.match_case: '',
-        ast.pattern: '',
-        ast.MatchValue: '',
-        ast.MatchSingleton: '',
-        ast.MatchSequence: '',
-        ast.MatchMapping: '',
-        ast.MatchClass: '',
-        ast.MatchStar: '',
-        ast.MatchAs: '',
-        ast.MatchOr: '',
-        ast.type_ignore: '',
-        ast.TypeIgnore: '',
-        ast.slice: '',
-        ast.Index: '',
-        ast.ExtSlice: ''
-    }
-    return astToTokenList[astClassNode]
-    # point = {'x':4,'y':-5}
-    # print('{xx} {y}'.format_map(point))
+    if field == None:
+        return astToTokenList[astClassNode]
+    else:
+        return astToTokenList[astClassNode][field].format('' if value == None else value)
 
-    # point = {'x':4,'y':-5, 'z': 0}
-    # print('{x} {y} {z}'.format_map(point))
-
-def GraphRecursive(treeNode:AST|None = AST, graphNode = None, graph:Graph = pythonAST, level:int = 0):
+def GraphRecursive(graph:Graph = pythonAST, graphNode = None, block_level = 0):
     """
     This function walks recursively on the given RDFS graph. For each graph node, its type is tested and, from searching on `ASTlist`, it becomes possible to performe a new query for this node by each node field (described by the AST).
     
     This function needs these following arguments:
-    - `treeNode:AST|None`: First node to dispacth subsequent queries on the RDFS graph;
-    - `graphNode`: graph node for which will be perfomed its fields searching and the recursive subqueries;
-    - `graph:Graph`: graph object in which will be performed all SPARQL queries;
-    - `level:int`: level of the current recursion stack.
+    - `graphNode`: graph node for which will be performed its fields searching and the recursive subqueries;
+    - `graph:Graph`: graph object in which will be performed all SPARQL queries.
     """
-    if treeNode is not None and graphNode is None:
-        for subject in RDFQuery(graph, query(predicate = "rdf:type", object = "mpl2kdl:" + treeNode.__name__)):
-            print(level*"    ", f'name: {tokenTranslate(astClassNode = treeNode) or subject.s.fragment}')
-            for field in treeNode._fields:
-                for object in RDFQuery(graph, query(subject = "mpl2kdl:" + subject.s.fragment, predicate = "mpl2kdl:_" + field)):
-                    # try:
-                    #     print(level*"    ", treeNode.__name__, field, object.o.fragment)
-                    # except:
-                    #     print(level*"    ", treeNode.__name__, field, object.o)
-                    GraphRecursive(treeNode = None, graphNode = object.o, graph = graph, level = level + 1)
-    elif treeNode is None and graphNode is not None:
-            try:
-                for subject in RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate="rdf:type")):
-                    print(level*"    ", f'name: {tokenTranslate(astClassNode = ASTlist[subject.o.fragment]) or subject.o.fragment}')
-                    for field in ASTlist[subject.o.fragment]._fields:
-                        for object in RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate = "mpl2kdl:_" + field)):
-                            # try:
-                            #     print(level*"    ", treeNode.__name__, field, object.o.fragment)
-                            # except:
-                            #     print(level*"    ", treeNode.__name__, field, object.o)
-                            GraphRecursive(treeNode = None, graphNode = object.o, graph = graph, level = level + 1)
-            except:
-                print(level*"    ", graphNode)
-    else:
-        pass
+    try:
+        for subject in RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate="rdf:type")):
+            print(astToTokenList[getAstObject(subject.o.fragment)]['tokenValue'], end="")
+            fields = getAstObject(subject.o.fragment)._fields
+            if len(fields) > 0:
+                for field in fields:
+                    if field in fieldsFilter:
+                        continue
+                    
+                    level = block_level
 
-def ASTRecursive(node:AST = AST, level:int = 0, graph:Graph = pythonAST):
+                    if field == 'body': # marcador de escopo
+                        level += 1
+
+                    objects = RDFQuery(graph, query(subject = "mpl2kdl:" + graphNode.fragment, predicate = "mpl2kdl:_" + field))
+                    if len(objects) > 0:
+                        print(astToTokenList[getAstObject(subject.o.fragment)][field]['open'], end="")
+                        for index, object in enumerate(objects):
+                            value = GraphRecursive(graph = graph, graphNode = object.o, block_level = level)
+                            # print('\n<', subject.o.fragment, field, object.o, '>\n')
+                            print("\n!-{debug: ", value.__class__, value, '}-!')
+
+                            # observar o 'body' como marcador de bloco
+                            if field == 'body':
+                                print(level*'\t', end="")
+                                # print(level, end="")
+                                # print(block_level)
+
+                            print(value if value is not None else '', end="")
+                            
+                            # se houver mais de uma iteração, colocar as vírgulas
+                            if (getAstObject(subject.o.fragment) is Tuple and index != len(objects)-1) or (getAstObject(subject.o.fragment) is ImportFrom and field == 'names' and len(objects) > 1 and index != len(objects)-1) or (getAstObject(subject.o.fragment) is Call and field == 'args' and index != len(objects)-1):
+                                # Para as tuplas é mais fácil, mas no caso abaixo, tenho que estudar outra alternativa:
+                                # getAstObject(subject.o.fragment) is alias and field == 'name' and len(objects) > 1 and index != len(objects)-1
+                                print(', ', end='')
+                        print(astToTokenList[getAstObject(subject.o.fragment)][field]['close'], end="")
+                    else:
+                        # resolver o caso do 'as' no ImportFrom
+                        # if field in fieldsFilter:
+                        #     print(astToTokenList[getAstObject(subject.o.fragment)][field]['open'], end="")
+                        #     print(astToTokenList[getAstObject(subject.o.fragment)][field]['close'], end="")
+                        pass
+    except:
+        # print('<-{',graphNode,'}->')
+        if graphNode == 'None':
+            # Aparente os termos que são da classe rdflib.term.literal possuem conversão implícita para tipos como 'string' e, sendo assim, é possível diferenciar None (NoneType) de 'None' (String)
+            graphNode = None
+            # Estou forçando a variável graphNone, quando 'None', recebe None (NoneType)
+            return graphNode
+        else:
+            return graphNode
+
+def ASTRecursive(node:AST = AST, level:int = 0, graph:Graph = pythonAST) -> bool:
     """
     In a recursive walking on AST, it performes `GraphRecursive()` for first leaf.
     """
     subclasses = node.__subclasses__()
     for subclass in subclasses:
-        ASTRecursive(node = subclass, level = level+1, graph = graph)
-        return
-    if level > 1:   
-        GraphRecursive(treeNode = node, graph = graph)
-        return
+        if ASTRecursive(node = subclass, level = level+1, graph = graph) == True:
+            return True
+        else:
+            return False
+    if level > 1:
+        try:
+            for subject in RDFQuery(graph, query(predicate = "rdf:type", object = "mpl2kdl:" + node.__name__)):
+                for field in node._fields:
+                    for object in RDFQuery(graph, query(subject = "mpl2kdl:" + subject.s.fragment, predicate = "mpl2kdl:_" + field)):
+                        GraphRecursive(graph = graph, graphNode = object.o)
+            return True
+        except:
+            return False
 
-def Recursive(node:AST = AST, graph:Graph = pythonAST):
+def Recursive(node:AST = AST, graph:Graph = pythonAST) -> bool:
     """
     This function only dispatch `ASTRecursive`.
     """
-    ASTRecursive(node = node, graph = graph)
+    return ASTRecursive(node = node, graph = graph)
 
 if __name__ == "__main__":
     astList()
-    print("-------------------------- DIGITAL LOCKER REF -------------------------")
-    Recursive(graph = digital_locker_ref)
+
+    # print("-------------------------- DIGITAL LOCKER REF -------------------------")
+    # Recursive(graph = digital_locker_ref)
+    # print("-----------------------------------------------------------------------")
+
+    # print()
+
+    print("-------------------------- DIGITAL LOCKER LIB -------------------------")
+    Recursive(graph = digital_locker_lib)
     print("-----------------------------------------------------------------------")
